@@ -1,3 +1,4 @@
+/*
 The MIT License (MIT)
 
 SDL_theora:  An example theora video loading library for use with SDL
@@ -20,3 +21,42 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+/* A simple library to load and play theora video as SDL surfaces */
+
+#include "SDL_theora.h"
+
+static int loaded = 0;
+
+
+int THR_InitAudio()
+{
+	if(loaded == 0)
+	{
+		/*
+		lib.handle = SDL_LoadObject(LOAD_JPG_DYNAMIC);
+		if ( lib.handle == NULL ) {
+		return -1;
+		}
+		*/
+	}
+	++loaded;
+
+	return 0;
+}
+
+void THR_QuitAudio()
+{
+	if(loaded == 0)
+	{
+		return;
+	}
+
+	if(loaded == 1)
+	{
+		//SDL_UnloadObject(lib.handle);
+	}
+
+	--loaded;
+}
